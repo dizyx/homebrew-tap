@@ -18,7 +18,7 @@ cask "nockerl-voice" do
   # The app updates itself through Sparkle. Declaring it stops brew treating a
   # self-updated install as drift and trying to reinstall over the top of it.
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Nockerl Voice.app"
 
