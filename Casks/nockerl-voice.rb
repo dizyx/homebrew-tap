@@ -22,8 +22,19 @@ cask "nockerl-voice" do
 
   app "Nockerl Voice.app"
 
+  # Verified against the running app, not guessed. The support directory is named
+  # "NockerlVoice", NOT the bundle id: AppPaths.directoryNamespace returns the bundle id
+  # only for non-production builds. The first version of this cask listed
+  # com.dizyx.nockerlvoice, a path that does not exist on a production install, so zap
+  # would have left every kept recording behind while reporting success.
+  #
+  # The transcription history is deliberately NOT listed. It lives at SwiftData's default
+  # location, ~/Library/Application Support/default.store, which is shared rather than
+  # namespaced to this app, so any other non-sandboxed SwiftData app can own that same
+  # file. Deleting another application's database during an uninstall would be far worse
+  # than leaving a file behind. The README says where it is and lets the user decide.
   zap trash: [
-    "~/Library/Application Support/com.dizyx.nockerlvoice",
+    "~/Library/Application Support/NockerlVoice",
     "~/Library/Logs/NockerlVoice",
     "~/Library/Preferences/com.dizyx.nockerlvoice.plist",
   ]
