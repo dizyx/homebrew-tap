@@ -1,6 +1,6 @@
 cask "nockerl-voice" do
-  version "1.0.10"
-  sha256 "789bd53b016438d8b052275482938dfd39ecd634c83d83845b3b5ecebf95f4ea"
+  version "1.0.11"
+  sha256 "6aff76f184c8d1fd7390397c392d8740783b6c7b9e1eb3f6200d4f79d18d692a"
 
   # The app bundle is named "Nockerl Voice.app" but the DMG deliberately is not. A space in
   # the filename becomes %20 in this URL and in the Sparkle appcast enclosure that every
